@@ -1,12 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import ExperiencesSection from '@/components/ExperiencesSection';
+import CampfireSection from '@/components/CampfireSection';
+import Footer from '@/components/Footer';
+import SOSButton from '@/components/SOSButton';
+import LeafParticles from '@/components/particles/LeafParticles';
+import FireflyParticles from '@/components/particles/FireflyParticles';
+import MistEffect from '@/components/particles/MistEffect';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen bg-background overflow-x-hidden">
+      {/* Ambient Particles */}
+      <LeafParticles />
+      <FireflyParticles />
+      <MistEffect />
+      
+      {/* Navigation */}
+      <Navigation />
+      
+      {/* Main Content */}
+      <main>
+        <HeroSection />
+        <ExperiencesSection />
+        <CampfireSection />
+      </main>
+      
+      {/* Footer */}
+      <Footer />
+      
+      {/* Emergency SOS Button */}
+      <SOSButton />
     </div>
   );
 };
