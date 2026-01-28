@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Users, Music, Utensils } from 'lucide-react';
+import { Users, Music, Utensils, Calendar } from 'lucide-react';
 import campfireImage from '@/assets/campfire.jpg';
 
 const features = [
@@ -42,14 +42,14 @@ const CampfireSection = () => {
           className="absolute inset-0 bg-cover bg-center scale-110"
           style={{ backgroundImage: `url(${campfireImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
       </motion.div>
 
-      {/* Fire Glow Effect */}
+      {/* Fire Glow Effect - Neon style */}
       <motion.div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[150px]"
         style={{
-          background: 'radial-gradient(circle, hsla(35, 100%, 60%, 0.3) 0%, hsla(25, 90%, 50%, 0.1) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, hsla(25, 100%, 55%, 0.3) 0%, hsla(15, 100%, 50%, 0.1) 50%, transparent 70%)',
         }}
         animate={{
           scale: [1, 1.1, 1],
@@ -74,12 +74,14 @@ const CampfireSection = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-fire-glow text-sm tracking-widest uppercase">
+              <span className="text-accent text-sm tracking-widest uppercase neon-text">
                 Evening Rituals
               </span>
               <h2 className="text-display text-4xl md:text-5xl lg:text-6xl">
                 Gather Around the
-                <span className="block text-fire-ember">Sacred Fire</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-fire-glow">
+                  Sacred Fire
+                </span>
               </h2>
               <p className="text-body text-muted-foreground text-lg max-w-xl">
                 As darkness embraces the forest, the campfire becomes the heart of our community. 
@@ -96,10 +98,10 @@ const CampfireSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + index * 0.1 }}
-                  className="flex items-start gap-4 p-4 rounded-xl glass-forest"
+                  className="flex items-start gap-4 p-4 rounded-xl glass-neon"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-fire-ember/20 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-fire-glow" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0 border border-accent/30">
+                    <feature.icon className="w-5 h-5 text-accent" />
                   </div>
                   <div>
                     <h4 className="text-display text-lg text-foreground">{feature.title}</h4>
@@ -109,7 +111,8 @@ const CampfireSection = () => {
               ))}
             </div>
 
-            <Button variant="golden" size="lg">
+            <Button variant="golden" size="lg" className="gap-2">
+              <Calendar className="w-5 h-5" />
               Reserve Your Spot
             </Button>
           </motion.div>

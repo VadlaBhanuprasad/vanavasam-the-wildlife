@@ -6,109 +6,114 @@
 
 @layer base {
   :root {
-    /* Forest Experience Design System */
-    --background: 150 25% 6%;
-    --foreground: 45 30% 92%;
+    /* Dark & Dramatic Design System */
+    --background: 220 20% 4%;
+    --foreground: 0 0% 95%;
 
-    --card: 150 20% 10%;
-    --card-foreground: 45 30% 92%;
+    --card: 220 20% 7%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 150 20% 8%;
-    --popover-foreground: 45 30% 92%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Deep Forest Green */
-    --primary: 150 45% 25%;
-    --primary-foreground: 45 30% 95%;
+    /* Neon Cyan Primary */
+    --primary: 180 100% 45%;
+    --primary-foreground: 220 20% 4%;
 
-    /* Earthy Brown */
-    --secondary: 30 35% 20%;
-    --secondary-foreground: 45 30% 92%;
+    /* Deep Purple Secondary */
+    --secondary: 280 80% 35%;
+    --secondary-foreground: 0 0% 95%;
 
-    /* Muted Forest */
-    --muted: 150 15% 15%;
-    --muted-foreground: 150 10% 60%;
+    /* Muted Dark */
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
 
-    /* Sacred Gold */
-    --accent: 42 75% 55%;
-    --accent-foreground: 150 25% 6%;
+    /* Electric Orange Accent */
+    --accent: 25 100% 55%;
+    --accent-foreground: 220 20% 4%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 45 30% 95%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 150 20% 18%;
-    --input: 150 20% 18%;
-    --ring: 42 75% 55%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 180 100% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom Forest Colors */
-    --forest-deep: 150 40% 8%;
-    --forest-canopy: 150 45% 18%;
-    --forest-moss: 120 35% 25%;
-    --forest-fern: 140 40% 30%;
+    /* Custom Dark Dramatic Colors */
+    --forest-deep: 200 30% 5%;
+    --forest-canopy: 180 40% 12%;
+    --forest-moss: 160 50% 20%;
+    --forest-fern: 150 60% 35%;
     
-    --earth-bark: 25 45% 15%;
-    --earth-soil: 20 35% 12%;
-    --earth-clay: 15 40% 25%;
+    --earth-bark: 30 30% 10%;
+    --earth-soil: 25 25% 8%;
+    --earth-clay: 20 35% 18%;
     
-    --water-mist: 200 30% 85%;
-    --water-stream: 195 50% 40%;
-    --water-deep: 200 45% 25%;
+    --water-mist: 200 20% 80%;
+    --water-stream: 195 70% 50%;
+    --water-deep: 200 60% 30%;
     
-    --fire-ember: 25 90% 50%;
-    --fire-flame: 15 95% 55%;
+    --fire-ember: 15 100% 50%;
+    --fire-flame: 25 100% 55%;
     --fire-glow: 35 100% 60%;
     
-    --temple-gold: 42 80% 55%;
-    --temple-brass: 38 70% 45%;
-    --temple-sacred: 45 85% 65%;
+    --temple-gold: 45 100% 50%;
+    --temple-brass: 40 90% 45%;
+    --temple-sacred: 50 95% 60%;
     
-    --night-sky: 220 40% 12%;
-    --night-moon: 45 25% 85%;
-    --night-star: 45 100% 90%;
+    --night-sky: 230 30% 8%;
+    --night-moon: 45 20% 90%;
+    --night-star: 45 100% 95%;
+
+    /* Neon Accents */
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 280 100% 60%;
+    --neon-orange: 25 100% 55%;
+    --neon-green: 150 100% 45%;
 
     /* Gradients */
-    --gradient-forest: linear-gradient(180deg, hsl(150 40% 8%) 0%, hsl(150 45% 18%) 50%, hsl(120 35% 25%) 100%);
-    --gradient-twilight: linear-gradient(180deg, hsl(220 40% 12%) 0%, hsl(270 30% 20%) 50%, hsl(150 40% 8%) 100%);
-    --gradient-golden: linear-gradient(135deg, hsl(42 80% 55%) 0%, hsl(38 70% 45%) 100%);
-    --gradient-mist: linear-gradient(180deg, hsla(200 30% 85% / 0.3) 0%, transparent 100%);
-    --gradient-fire: radial-gradient(circle, hsl(35 100% 60%) 0%, hsl(25 90% 50%) 50%, hsl(15 95% 35%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(230 30% 8%) 0%, hsl(220 20% 4%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(180 100% 45%) 0%, hsl(280 100% 60%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(25 100% 55%) 0%, hsl(15 100% 50%) 100%);
+    --gradient-forest: linear-gradient(180deg, hsl(200 30% 5%) 0%, hsl(180 40% 12%) 50%, hsl(160 50% 20%) 100%);
 
     /* Shadows */
-    --shadow-forest: 0 20px 50px -15px hsla(150 40% 5% / 0.8);
-    --shadow-glow: 0 0 40px hsla(42 80% 55% / 0.3);
-    --shadow-mist: 0 10px 30px -10px hsla(200 30% 85% / 0.2);
+    --shadow-neon: 0 0 30px hsla(180, 100%, 50%, 0.4);
+    --shadow-purple: 0 0 30px hsla(280, 100%, 60%, 0.3);
+    --shadow-dramatic: 0 25px 60px -15px hsla(0, 0%, 0%, 0.9);
 
-    --sidebar-background: 150 25% 6%;
-    --sidebar-foreground: 45 30% 92%;
-    --sidebar-primary: 150 45% 25%;
-    --sidebar-primary-foreground: 45 30% 95%;
-    --sidebar-accent: 42 75% 55%;
-    --sidebar-accent-foreground: 150 25% 6%;
-    --sidebar-border: 150 20% 18%;
-    --sidebar-ring: 42 75% 55%;
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 180 100% 45%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 25 100% 55%;
+    --sidebar-accent-foreground: 220 20% 4%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 180 100% 45%;
   }
 
   .dark {
-    --background: 150 25% 6%;
-    --foreground: 45 30% 92%;
-    --card: 150 20% 10%;
-    --card-foreground: 45 30% 92%;
-    --popover: 150 20% 8%;
-    --popover-foreground: 45 30% 92%;
-    --primary: 150 45% 25%;
-    --primary-foreground: 45 30% 95%;
-    --secondary: 30 35% 20%;
-    --secondary-foreground: 45 30% 92%;
-    --muted: 150 15% 15%;
-    --muted-foreground: 150 10% 60%;
-    --accent: 42 75% 55%;
-    --accent-foreground: 150 25% 6%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 45 30% 95%;
-    --border: 150 20% 18%;
-    --input: 150 20% 18%;
-    --ring: 42 75% 55%;
+    --background: 220 20% 4%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 180 100% 45%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 280 80% 35%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 25 100% 55%;
+    --accent-foreground: 220 20% 4%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 180 100% 45%;
   }
 }
 
@@ -165,14 +170,29 @@
 
   .glass-forest {
     @apply backdrop-blur-md;
-    background: hsla(150, 40%, 8%, 0.7);
-    border: 1px solid hsla(150, 20%, 25%, 0.3);
+    background: hsla(220, 20%, 4%, 0.8);
+    border: 1px solid hsla(180, 100%, 50%, 0.15);
   }
 
   .glass-light {
     @apply backdrop-blur-sm;
-    background: hsla(45, 30%, 92%, 0.05);
-    border: 1px solid hsla(45, 30%, 92%, 0.1);
+    background: hsla(0, 0%, 100%, 0.05);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+
+  .glass-neon {
+    @apply backdrop-blur-md;
+    background: hsla(220, 20%, 6%, 0.9);
+    border: 1px solid hsla(180, 100%, 50%, 0.3);
+    box-shadow: 0 0 20px hsla(180, 100%, 50%, 0.1);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsla(180, 100%, 50%, 0.5), 0 0 20px hsla(180, 100%, 50%, 0.3);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px hsla(180, 100%, 50%, 0.4), inset 0 0 10px hsla(180, 100%, 50%, 0.1);
   }
 
   /* Particle animation base */

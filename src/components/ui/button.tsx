@@ -15,13 +15,14 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Forest Experience Variants
-        forest: "bg-forest-canopy text-foreground border border-forest-fern/30 hover:bg-forest-moss hover:border-forest-fern/50 shadow-lg",
-        golden: "bg-gradient-to-r from-temple-gold to-temple-brass text-accent-foreground font-semibold hover:from-temple-brass hover:to-temple-gold shadow-[0_0_40px_hsla(42,80%,55%,0.3)]",
-        mist: "backdrop-blur-sm bg-foreground/5 text-foreground hover:bg-foreground/10 border border-foreground/20",
-        nature: "bg-forest-moss/80 text-foreground border border-forest-fern/40 hover:bg-forest-fern/80 backdrop-blur-sm",
+        // Dark Dramatic Variants
+        forest: "bg-forest-canopy text-foreground border border-neon-cyan/30 hover:border-neon-cyan/60 hover:bg-forest-moss shadow-lg transition-all hover:shadow-[0_0_20px_hsla(180,100%,50%,0.2)]",
+        golden: "bg-gradient-to-r from-temple-gold to-accent text-accent-foreground font-semibold hover:from-accent hover:to-temple-gold shadow-[0_0_30px_hsla(45,100%,50%,0.3)] transition-all",
+        mist: "backdrop-blur-sm bg-foreground/5 text-foreground hover:bg-foreground/10 border border-foreground/20 transition-all",
+        nature: "bg-forest-moss/80 text-foreground border border-neon-green/40 hover:border-neon-green/70 backdrop-blur-sm transition-all hover:shadow-[0_0_15px_hsla(150,100%,45%,0.2)]",
         sos: "bg-destructive text-destructive-foreground font-bold animate-pulse hover:animate-none hover:bg-destructive/90 shadow-lg shadow-destructive/50",
-        hero: "bg-gradient-to-r from-forest-canopy via-forest-moss to-forest-fern text-foreground font-display text-lg border border-forest-fern/30 hover:from-forest-moss hover:via-forest-fern hover:to-forest-canopy shadow-[0_20px_50px_-15px_hsla(150,40%,5%,0.8)]",
+        hero: "bg-gradient-to-r from-primary via-neon-purple to-accent text-foreground font-display text-lg border border-primary/30 hover:border-primary/60 shadow-[0_0_40px_hsla(180,100%,50%,0.3)] transition-all hover:shadow-[0_0_60px_hsla(180,100%,50%,0.5)]",
+        neon: "bg-transparent text-primary border-2 border-primary hover:bg-primary/10 shadow-[0_0_20px_hsla(180,100%,50%,0.3)] transition-all hover:shadow-[0_0_30px_hsla(180,100%,50%,0.5)]",
       },
       size: {
         default: "h-10 px-4 py-2",

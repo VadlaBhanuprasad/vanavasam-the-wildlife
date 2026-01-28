@@ -7,26 +7,31 @@ interface Firefly {
   y: number;
   size: number;
   duration: number;
+  delay: number;
+  color: string;
 }
 
 const FireflyParticles = () => {
   const [fireflies, setFireflies] = useState<Firefly[]>([]);
 
   useEffect(() => {
-    const generateFireflies = () => {
-      const newFireflies: Firefly[] = [];
-      for (let i = 0; i < 30; i++) {
-        newFireflies.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: 2 + Math.random() * 4,
-          duration: 3 + Math.random() * 4,
-        });
-      }
-      setFireflies(newFireflies);
-    };
-    generateFireflies();
+    const colors = [
+      'hsl(180, 100%, 50%)', // Cyan
+      'hsl(280, 100%, 60%)', // Purple
+      'hsl(45, 100%, 50%)', // Gold
+      'hsl(150, 100%, 45%)', // Green
+    ];
+
+    const particles = Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      duration: Math.random() * 6 + 4,
+      delay: Math.random() * 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    }));
+    setFireflies(particles);
   }, []);
 
   return (
@@ -34,24 +39,26 @@ const FireflyParticles = () => {
       {fireflies.map((firefly) => (
         <motion.div
           key={firefly.id}
-          className="absolute rounded-full bg-temple-sacred"
+          className="absolute rounded-full"
           style={{
             left: `${firefly.x}%`,
             top: `${firefly.y}%`,
             width: firefly.size,
             height: firefly.size,
-            boxShadow: `0 0 ${firefly.size * 3}px hsl(45 85% 65%)`,
+            backgroundColor: firefly.color,
+            boxShadow: `0 0 ${firefly.size * 4}px ${firefly.color}, 0 0 ${firefly.size * 8}px ${firefly.color}`,
           }}
           animate={{
-            opacity: [0, 1, 1, 0],
-            scale: [0.5, 1.2, 1, 0.5],
-            x: [0, Math.random() * 40 - 20, Math.random() * 40 - 20, 0],
-            y: [0, Math.random() * 40 - 20, Math.random() * 40 - 20, 0],
+            opacity: [0, 1, 0.5, 1, 0],
+            scale: [0.8, 1.2, 0.9, 1.1, 0.8],
+            x: [0, Math.random() * 40 - 20, Math.random() * 30 - 15, 0],
+            y: [0, Math.random() * -40, Math.random() * -30, 0],
           }}
           transition={{
             duration: firefly.duration,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: firefly.delay,
+            ease: 'easeInOut',
           }}
         />
       ))}

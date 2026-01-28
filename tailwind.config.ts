@@ -92,6 +92,12 @@ export default {
           moon: "hsl(var(--night-moon))",
           star: "hsl(var(--night-star))",
         },
+        neon: {
+          cyan: "hsl(var(--neon-cyan))",
+          purple: "hsl(var(--neon-purple))",
+          orange: "hsl(var(--neon-orange))",
+          green: "hsl(var(--neon-green))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

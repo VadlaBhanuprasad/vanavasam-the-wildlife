@@ -3,7 +3,6 @@ import { Tent, Moon, Bird, Droplets, Mountain, Flame } from 'lucide-react';
 import ExperienceCard from './ExperienceCard';
 import nightJungle from '@/assets/night-jungle.jpg';
 import waterfall from '@/assets/waterfall.jpg';
-import campfire from '@/assets/campfire.jpg';
 import templeNight from '@/assets/temple-night.jpg';
 import tribalDance from '@/assets/tribal-dance.jpg';
 import forestHero from '@/assets/forest-hero.jpg';
@@ -49,7 +48,10 @@ const experiences = [
 
 const ExperiencesSection = () => {
   return (
-    <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+    <section id="experiences" className="relative py-24 md:py-32 px-4 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[150px]" />
+      
       {/* Section Header */}
       <motion.div 
         className="max-w-7xl mx-auto mb-16 text-center"
@@ -59,7 +61,7 @@ const ExperiencesSection = () => {
         transition={{ duration: 0.8 }}
       >
         <motion.span 
-          className="text-temple-gold text-sm tracking-widest uppercase mb-4 block"
+          className="text-primary text-sm tracking-widest uppercase mb-4 block neon-text"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -67,7 +69,7 @@ const ExperiencesSection = () => {
           Curated Adventures
         </motion.span>
         <h2 className="text-display text-4xl md:text-5xl lg:text-6xl mb-6">
-          Unforgettable <span className="text-forest-fern">Experiences</span>
+          Unforgettable <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon-purple">Experiences</span>
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
           Each journey is crafted to awaken your senses, challenge your spirit, 
@@ -76,7 +78,7 @@ const ExperiencesSection = () => {
       </motion.div>
 
       {/* Experience Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {experiences.map((experience, index) => (
           <ExperienceCard
             key={experience.title}
