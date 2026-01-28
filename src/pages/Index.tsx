@@ -2,6 +2,10 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ExperiencesSection from '@/components/ExperiencesSection';
 import CampfireSection from '@/components/CampfireSection';
+import WildlifeActivity from '@/components/visualizations/WildlifeActivity';
+import WeatherForest from '@/components/visualizations/WeatherForest';
+import InteractiveMap from '@/components/visualizations/InteractiveMap';
+import EcoImpact from '@/components/visualizations/EcoImpact';
 import Footer from '@/components/Footer';
 import SOSButton from '@/components/SOSButton';
 import LeafParticles from '@/components/particles/LeafParticles';
@@ -23,7 +27,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <ExperiencesSection />
+        <WildlifeActivity />
+        <WeatherForest />
+        <InteractiveMap />
         <CampfireSection />
+        <EcoImpact />
       </main>
       
       {/* Footer */}
