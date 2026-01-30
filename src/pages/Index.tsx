@@ -1,6 +1,11 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ExperiencesSection from '@/components/ExperiencesSection';
+import StaysSection from '@/components/StaysSection';
+import AdventuresSection from '@/components/AdventuresSection';
+import CulturalSection from '@/components/CulturalSection';
+import GallerySection from '@/components/GallerySection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import CampfireSection from '@/components/CampfireSection';
 import WildlifeActivity from '@/components/visualizations/WildlifeActivity';
 import WeatherForest from '@/components/visualizations/WeatherForest';
@@ -27,6 +32,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <ExperiencesSection />
+        <StaysSection />
+        <AdventuresSection />
+        <CulturalSection />
+        <GallerySection />
+        <TestimonialsSection />
         <WildlifeActivity />
         <WeatherForest />
         <InteractiveMap />

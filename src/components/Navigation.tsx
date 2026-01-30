@@ -6,9 +6,10 @@ import BookingModal from './BookingModal';
 
 const navLinks = [
   { label: 'Experiences', href: '#experiences' },
-  { label: 'Wildlife', href: '#wildlife' },
-  { label: 'Map', href: '#map' },
-  { label: 'Eco Impact', href: '#eco' },
+  { label: 'Stays', href: '#stays' },
+  { label: 'Adventures', href: '#adventures' },
+  { label: 'Culture', href: '#culture' },
+  { label: 'Gallery', href: '#gallery' },
 ];
 
 const Navigation = () => {
