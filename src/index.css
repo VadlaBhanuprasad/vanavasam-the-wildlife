@@ -26,7 +26,7 @@
 
     /* Muted Dark */
     --muted: 220 15% 12%;
-    --muted-foreground: 220 10% 55%;
+    --muted-foreground: 220 10% 75%;
 
     /* Electric Orange Accent */
     --accent: 25 100% 55%;
@@ -106,7 +106,7 @@
     --secondary: 280 80% 35%;
     --secondary-foreground: 0 0% 95%;
     --muted: 220 15% 12%;
-    --muted-foreground: 220 10% 55%;
+    --muted-foreground: 220 10% 75%;
     --accent: 25 100% 55%;
     --accent-foreground: 220 20% 4%;
     --destructive: 0 85% 55%;
