@@ -31,21 +31,20 @@ const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled ? 'glass-neon py-3' : 'py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${isScrolled ? 'glass-neon py-3' : 'py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <motion.a 
-            href="#" 
+          <motion.a
+            href="#"
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-neon-purple flex items-center justify-center shadow-[0_0_20px_hsla(180,100%,50%,0.3)]">
               <Leaf className="w-5 h-5 text-foreground" />
             </div>
-            <span className="text-display text-xl hidden sm:block">Vanavasam</span>
+            <span className="text-display text-xl ">Vanavasam</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -65,8 +64,8 @@ const Navigation = () => {
 
           {/* Book Now Button */}
           <div className="hidden md:block">
-            <Button 
-              variant="neon" 
+            <Button
+              variant="neon"
               size="sm"
               onClick={() => setIsBookingOpen(true)}
               className="gap-2"
@@ -109,9 +108,9 @@ const Navigation = () => {
                   {link.label}
                 </motion.a>
               ))}
-              <Button 
-                variant="hero" 
-                size="lg" 
+              <Button
+                variant="hero"
+                size="lg"
                 className="mt-4 gap-2"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
