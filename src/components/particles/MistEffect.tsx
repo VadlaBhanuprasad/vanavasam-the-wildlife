@@ -1,56 +1,70 @@
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 
 const MistEffect = () => {
+  const mistClouds = useMemo(() => 
+    Array.from({ length: 3 }, (_, i) => ({
+      id: i,
+      width: 300 + i * 100,
+      height: 80 + i * 20,
+      bottom: 15 + i * 15,
+      left: -10 + i * 30,
+      isAlt: i % 2 === 0,
+    })), []
+  );
+
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-5">
-      {/* Bottom mist layer - darker dramatic */}
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-5 will-change-transform">
+      {/* Bottom mist layer */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[40vh]"
+        className="absolute bottom-0 left-0 right-0 h-[30vh]"
         style={{
-          background: 'linear-gradient(to top, hsla(180, 100%, 50%, 0.05), transparent)',
+          background: 'linear-gradient(to top, hsla(180, 100%, 50%, 0.03), transparent)',
+          willChange: 'opacity',
         }}
         animate={{
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.15, 0.25, 0.15],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
       />
       
-      {/* Floating mist clouds with neon tint */}
-      {[...Array(5)].map((_, i) => (
+      {/* Floating mist clouds */}
+      {mistClouds.map((cloud) => (
         <motion.div
-          key={i}
+          key={cloud.id}
           className="absolute rounded-full blur-3xl"
           style={{
-            width: 300 + Math.random() * 200,
-            height: 100 + Math.random() * 100,
-            background: i % 2 === 0 
-              ? 'hsla(180, 100%, 50%, 0.03)' 
-              : 'hsla(280, 100%, 60%, 0.02)',
-            bottom: `${10 + i * 10}%`,
-            left: `${-20 + Math.random() * 100}%`,
+            width: cloud.width,
+            height: cloud.height,
+            background: cloud.isAlt 
+              ? 'hsla(180, 100%, 50%, 0.02)' 
+              : 'hsla(280, 100%, 60%, 0.015)',
+            bottom: `${cloud.bottom}%`,
+            left: `${cloud.left}%`,
+            willChange: 'transform, opacity',
           }}
           animate={{
-            x: [0, 100, 0],
-            opacity: [0.1, 0.2, 0.1],
+            x: [0, 80, 0],
+            opacity: [0.08, 0.15, 0.08],
           }}
           transition={{
-            duration: 20 + i * 5,
+            duration: 25 + cloud.id * 8,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: i * 2,
+            delay: cloud.id * 3,
           }}
         />
       ))}
 
       {/* Top ambient glow */}
-      <motion.div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[50vh]"
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[40vh]"
         style={{
-          background: 'radial-gradient(ellipse at top, hsla(220, 20%, 10%, 0.8), transparent 70%)',
+          background: 'radial-gradient(ellipse at top, hsla(220, 20%, 10%, 0.6), transparent 70%)',
         }}
       />
     </div>

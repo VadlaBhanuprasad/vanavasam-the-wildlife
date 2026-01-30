@@ -2,28 +2,28 @@ import { motion } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Area, AreaChart } from 'recharts';
 
 const sightingsData = [
-  { time: '6AM', elephants: 12, tigers: 2, deer: 45, birds: 120 },
-  { time: '9AM', elephants: 8, tigers: 1, deer: 32, birds: 180 },
-  { time: '12PM', elephants: 3, tigers: 0, deer: 15, birds: 90 },
-  { time: '3PM', elephants: 5, tigers: 0, deer: 22, birds: 110 },
-  { time: '6PM', elephants: 15, tigers: 3, deer: 55, birds: 200 },
-  { time: '9PM', elephants: 2, tigers: 5, deer: 8, birds: 30 },
+  { time: '6AM', elephants: 12, peacocks: 35, deer: 45, butterflies: 180 },
+  { time: '9AM', elephants: 8, peacocks: 52, deer: 32, butterflies: 250 },
+  { time: '12PM', elephants: 3, peacocks: 28, deer: 15, butterflies: 120 },
+  { time: '3PM', elephants: 5, peacocks: 42, deer: 22, butterflies: 190 },
+  { time: '6PM', elephants: 15, peacocks: 68, deer: 55, butterflies: 280 },
+  { time: '9PM', elephants: 2, peacocks: 12, deer: 8, butterflies: 40 },
 ];
 
 const weeklyTrends = [
-  { day: 'Mon', sightings: 45 },
-  { day: 'Tue', sightings: 62 },
-  { day: 'Wed', sightings: 58 },
-  { day: 'Thu', sightings: 71 },
-  { day: 'Fri', sightings: 85 },
-  { day: 'Sat', sightings: 92 },
-  { day: 'Sun', sightings: 78 },
+  { day: 'Mon', sightings: 145 },
+  { day: 'Tue', sightings: 162 },
+  { day: 'Wed', sightings: 158 },
+  { day: 'Thu', sightings: 171 },
+  { day: 'Fri', sightings: 185 },
+  { day: 'Sat', sightings: 192 },
+  { day: 'Sun', sightings: 178 },
 ];
 
 const animalStats = [
   { name: 'Elephants', count: 156, icon: '🐘', trend: '+12%', color: 'hsl(180, 100%, 45%)' },
-  { name: 'Tigers', count: 23, icon: '🐅', trend: '+5%', color: 'hsl(25, 100%, 55%)' },
-  { name: 'Leopards', count: 18, icon: '🐆', trend: '+8%', color: 'hsl(45, 100%, 50%)' },
+  { name: 'Peacocks', count: 340, icon: '🦚', trend: '+18%', color: 'hsl(200, 100%, 50%)' },
+  { name: 'Monkeys', count: 520, icon: '🐒', trend: '+22%', color: 'hsl(30, 80%, 50%)' },
   { name: 'Deer Species', count: 890, icon: '🦌', trend: '+15%', color: 'hsl(150, 100%, 45%)' },
 ];
 
@@ -90,9 +90,9 @@ const WildlifeActivity = () => {
                       <stop offset="5%" stopColor="hsl(180, 100%, 45%)" stopOpacity={0.4} />
                       <stop offset="95%" stopColor="hsl(180, 100%, 45%)" stopOpacity={0} />
                     </linearGradient>
-                    <linearGradient id="tigerGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="hsl(25, 100%, 55%)" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="hsl(25, 100%, 55%)" stopOpacity={0} />
+                    <linearGradient id="peacockGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="hsl(200, 100%, 50%)" stopOpacity={0.4} />
+                      <stop offset="95%" stopColor="hsl(200, 100%, 50%)" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <XAxis dataKey="time" stroke="hsl(220, 10%, 55%)" fontSize={12} />
@@ -113,9 +113,9 @@ const WildlifeActivity = () => {
                   />
                   <Area
                     type="monotone"
-                    dataKey="tigers"
-                    stroke="hsl(25, 100%, 55%)"
-                    fill="url(#tigerGradient)"
+                    dataKey="peacocks"
+                    stroke="hsl(200, 100%, 50%)"
+                    fill="url(#peacockGradient)"
                     strokeWidth={2}
                   />
                 </AreaChart>
