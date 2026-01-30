@@ -12,7 +12,7 @@ const stays = [
   {
     name: 'Canopy Treehouse',
     type: 'Luxury Treehouse',
-    price: '$280',
+    price: '₹23,000',
     rating: 4.9,
     reviews: 128,
     image: ecoLodge,
@@ -22,7 +22,7 @@ const stays = [
   {
     name: 'Jungle Villa',
     type: 'Private Villa',
-    price: '$420',
+    price: '₹35,000',
     rating: 5.0,
     reviews: 89,
     image: resortInterior,
@@ -32,7 +32,7 @@ const stays = [
   {
     name: 'Safari Lodge',
     type: 'Eco Lodge',
-    price: '$180',
+    price: '₹15,000',
     rating: 4.8,
     reviews: 256,
     image: forestHero,
@@ -42,7 +42,7 @@ const stays = [
   {
     name: 'Riverside Camp',
     type: 'Glamping',
-    price: '$120',
+    price: '₹9,500',
     rating: 4.7,
     reviews: 312,
     image: campfire,

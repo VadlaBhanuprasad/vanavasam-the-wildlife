@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 interface Leaf {
@@ -12,37 +12,34 @@ interface Leaf {
 }
 
 const LeafParticles = () => {
-  const [leaves, setLeaves] = useState<Leaf[]>([]);
-
-  useEffect(() => {
-    const particles = Array.from({ length: 15 }, (_, i) => ({
+  const leaves = useMemo(() => 
+    Array.from({ length: 8 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      delay: Math.random() * 10,
-      duration: Math.random() * 10 + 15,
-      size: Math.random() * 12 + 8,
+      delay: Math.random() * 15,
+      duration: Math.random() * 15 + 20,
+      size: Math.random() * 10 + 8,
       rotation: Math.random() * 360,
-      opacity: Math.random() * 0.4 + 0.2,
-    }));
-    setLeaves(particles);
-  }, []);
+      opacity: Math.random() * 0.3 + 0.15,
+    })), []
+  );
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-5">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-5 will-change-transform">
       {leaves.map((leaf) => (
         <motion.div
           key={leaf.id}
-          className="absolute text-neon-green/30"
+          className="absolute text-neon-green/20"
           style={{
             left: `${leaf.x}%`,
             top: -20,
             fontSize: leaf.size,
             opacity: leaf.opacity,
+            willChange: 'transform',
           }}
           animate={{
             y: ['0vh', '110vh'],
-            x: [0, Math.sin(leaf.id) * 100, 0],
-            rotate: [leaf.rotation, leaf.rotation + 720],
+            rotate: [leaf.rotation, leaf.rotation + 360],
           }}
           transition={{
             duration: leaf.duration,
