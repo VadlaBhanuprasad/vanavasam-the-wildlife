@@ -21,7 +21,7 @@ const buttonVariants = cva(
         mist: "backdrop-blur-sm bg-foreground/5 text-foreground hover:bg-foreground/10 border border-foreground/20 transition-all",
         nature: "bg-forest-moss/80 text-foreground border border-neon-green/40 hover:border-neon-green/70 backdrop-blur-sm transition-all hover:shadow-[0_0_15px_hsla(150,100%,45%,0.2)]",
         sos: "bg-destructive text-destructive-foreground font-bold animate-pulse hover:animate-none hover:bg-destructive/90 shadow-lg shadow-destructive/50",
-        hero: "bg-gradient-to-r from-primary via-neon-purple to-accent text-foreground font-display text-lg border border-primary/30 hover:border-primary/60 shadow-[0_0_40px_hsla(180,100%,50%,0.3)] transition-all hover:shadow-[0_0_60px_hsla(180,100%,50%,0.5)]",
+        hero: "bg-gradient-to-r from-primary via-neon-cyan to-neon-green text-background font-display text-lg font-semibold border-2 border-primary/50 hover:border-primary shadow-[0_0_30px_hsla(180,100%,50%,0.5),0_0_60px_hsla(100,100%,45%,0.3)] hover:shadow-[0_0_50px_hsla(180,100%,50%,0.7),0_0_80px_hsla(150,100%,45%,0.5)] hover:scale-105 active:scale-95 transition-all duration-300",
         neon: "bg-transparent text-primary border-2 border-primary hover:bg-primary/10 shadow-[0_0_20px_hsla(180,100%,50%,0.3)] transition-all hover:shadow-[0_0_30px_hsla(180,100%,50%,0.5)]",
       },
       size: {
@@ -41,7 +41,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
