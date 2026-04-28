@@ -7,9 +7,10 @@ interface ExperienceCardProps {
   image: string;
   icon: LucideIcon;
   index: number;
+  onBookingOpen?: () => void;
 }
 
-const ExperienceCard = ({ title, description, image, icon: Icon, index }: ExperienceCardProps) => {
+const ExperienceCard = ({ title, description, image, icon: Icon, index, onBookingOpen }: ExperienceCardProps) => {
   return (
     <motion.div
       className="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
@@ -18,6 +19,7 @@ const ExperienceCard = ({ title, description, image, icon: Icon, index }: Experi
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
       whileHover={{ scale: 1.02 }}
+      onClick={onBookingOpen}
     >
       {/* Background Image */}
       <div 

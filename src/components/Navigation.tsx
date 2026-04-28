@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Leaf, Calendar } from 'lucide-react';
-import BookingModal from './BookingModal';
 
 const navLinks = [
   { label: 'Experiences', href: '#experiences' },
@@ -12,10 +11,13 @@ const navLinks = [
   { label: 'Gallery', href: '#gallery' },
 ];
 
-const Navigation = () => {
+interface NavigationProps {
+  onBookingOpen: () => void;
+}
+
+const Navigation = ({ onBookingOpen }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +69,7 @@ const Navigation = () => {
             <Button
               variant="neon"
               size="sm"
-              onClick={() => setIsBookingOpen(true)}
+              onClick={onBookingOpen}
               className="gap-2"
             >
               <Calendar className="w-4 h-4" />
@@ -114,7 +116,7 @@ const Navigation = () => {
                 className="mt-4 gap-2"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  setIsBookingOpen(true);
+                  onBookingOpen();
                 }}
               >
                 <Calendar className="w-5 h-5" />
@@ -124,9 +126,6 @@ const Navigation = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Booking Modal */}
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
 };

@@ -58,7 +58,11 @@ const carouselImages = [
   { src: campfire, alt: 'Campfire', title: 'Glamping Experience', subtitle: 'Stars above, nature around' },
 ];
 
-const StaysSection = () => {
+interface StaysSectionProps {
+  onBookingOpen: () => void;
+}
+
+const StaysSection = ({ onBookingOpen }: StaysSectionProps) => {
   return (
     <section id="stays" className="relative py-24 md:py-32 px-4 overflow-hidden">
       {/* Background Glow */}
@@ -152,7 +156,7 @@ const StaysSection = () => {
                       </span>
                     ))}
                   </div>
-                  <Button variant="neon" size="sm" className="w-full">
+                  <Button variant="neon" size="sm" className="w-full" onClick={onBookingOpen}>
                     Book Now
                   </Button>
                 </CardContent>

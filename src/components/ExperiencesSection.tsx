@@ -46,7 +46,11 @@ const experiences = [
   },
 ];
 
-const ExperiencesSection = () => {
+interface ExperiencesSectionProps {
+  onBookingOpen: () => void;
+}
+
+const ExperiencesSection = ({ onBookingOpen }: ExperiencesSectionProps) => {
   return (
     <section id="experiences" className="relative py-24 md:py-32 px-4 overflow-hidden">
       {/* Background Glow */}
@@ -84,6 +88,7 @@ const ExperiencesSection = () => {
             key={experience.title}
             {...experience}
             index={index}
+            onBookingOpen={onBookingOpen}
           />
         ))}
       </div>

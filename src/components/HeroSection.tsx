@@ -3,12 +3,14 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Sparkles, Shield, Calendar } from 'lucide-react';
-import BookingModal from './BookingModal';
 import forestHero from '@/assets/forest-hero.jpg';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onBookingOpen: () => void;
+}
+
+const HeroSection = ({ onBookingOpen }: HeroSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
   
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -117,7 +119,7 @@ const HeroSection = () => {
               <Button 
                 variant="hero" 
                 size="xl"
-                onClick={() => setIsBookingOpen(true)}
+                onClick={onBookingOpen}
                 className="group"
               >
                 <Calendar className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
@@ -148,9 +150,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </section>
-
-      {/* Booking Modal */}
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
 };

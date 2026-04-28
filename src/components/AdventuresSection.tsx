@@ -65,7 +65,11 @@ const carouselImages = adventures.map(adv => ({
   subtitle: adv.subtitle,
 }));
 
-const AdventuresSection = () => {
+interface AdventuresSectionProps {
+  onBookingOpen: () => void;
+}
+
+const AdventuresSection = ({ onBookingOpen }: AdventuresSectionProps) => {
   return (
     <section id="adventures" className="relative py-24 md:py-32 px-4 overflow-hidden">
       {/* Background Elements */}
@@ -178,7 +182,7 @@ const AdventuresSection = () => {
                     ))}
                   </div>
 
-                  <Button variant="nature" className="gap-2">
+                  <Button variant="nature" className="gap-2" onClick={onBookingOpen}>
                     Book Adventure
                     <ChevronRight className="w-4 h-4" />
                   </Button>

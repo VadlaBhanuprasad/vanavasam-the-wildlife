@@ -53,7 +53,11 @@ const carouselImages = [
   { src: campfire, alt: 'Campfire', title: 'Campfire Stories', subtitle: 'Tales of the forest' },
 ];
 
-const CulturalSection = () => {
+interface CulturalSectionProps {
+  onBookingOpen: () => void;
+}
+
+const CulturalSection = ({ onBookingOpen }: CulturalSectionProps) => {
   return (
     <section id="culture" className="relative py-24 md:py-32 px-4 overflow-hidden">
       {/* Background Glow */}
@@ -160,7 +164,7 @@ const CulturalSection = () => {
                     </div>
                   </div>
 
-                  <Button variant="golden" size="sm">
+                  <Button variant="golden" size="sm" onClick={onBookingOpen}>
                     Reserve Seat
                   </Button>
                 </div>

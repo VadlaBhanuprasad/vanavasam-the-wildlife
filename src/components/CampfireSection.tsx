@@ -22,7 +22,11 @@ const features = [
   },
 ];
 
-const CampfireSection = () => {
+interface CampfireSectionProps {
+  onBookingOpen: () => void;
+}
+
+const CampfireSection = ({ onBookingOpen }: CampfireSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -111,7 +115,7 @@ const CampfireSection = () => {
               ))}
             </div>
 
-            <Button variant="golden" size="lg" className="gap-2">
+            <Button variant="golden" size="lg" className="gap-2" onClick={onBookingOpen}>
               <Calendar className="w-5 h-5" />
               Reserve Your Spot
             </Button>

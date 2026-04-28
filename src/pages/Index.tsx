@@ -16,8 +16,14 @@ import SOSButton from '@/components/SOSButton';
 import LeafParticles from '@/components/particles/LeafParticles';
 import FireflyParticles from '@/components/particles/FireflyParticles';
 import MistEffect from '@/components/particles/MistEffect';
+import BookingModal from '@/components/BookingModal';
+import { useState } from 'react';
 
 const Index = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const openBooking = () => setIsBookingOpen(true);
+
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden">
       {/* Ambient Particles */}
@@ -26,21 +32,21 @@ const Index = () => {
       <MistEffect />
       
       {/* Navigation */}
-      <Navigation />
+      <Navigation onBookingOpen={openBooking} />
       
       {/* Main Content */}
       <main>
-        <HeroSection />
-        <ExperiencesSection />
-        <StaysSection />
-        <AdventuresSection />
-        <CulturalSection />
+        <HeroSection onBookingOpen={openBooking} />
+        <ExperiencesSection onBookingOpen={openBooking} />
+        <StaysSection onBookingOpen={openBooking} />
+        <AdventuresSection onBookingOpen={openBooking} />
+        <CulturalSection onBookingOpen={openBooking} />
         <GallerySection />
         <TestimonialsSection />
         <WildlifeActivity />
         <WeatherForest />
         <InteractiveMap />
-        <CampfireSection />
+        <CampfireSection onBookingOpen={openBooking} />
         <EcoImpact />
       </main>
       
@@ -49,6 +55,9 @@ const Index = () => {
       
       {/* Emergency SOS Button */}
       <SOSButton />
+
+      {/* Global Booking Modal */}
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </div>
   );
 };
